@@ -36,7 +36,6 @@ class MovieLocalDataSource {
         )
     )
     suspend fun getMovies(): List<Movie> {
-
         // get from db
         return movieList
     }

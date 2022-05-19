@@ -26,13 +26,9 @@ class MovieListViewModel : ViewModel() {
     private fun getMovies() {
         viewModelScope.launch {
             _status.value = ApiStatus.LOADING
-            try {
-                _movies.value = repository.getMovies()
-                _status.value = ApiStatus.DONE
-            } catch (e: Exception) {
-                _status.value = ApiStatus.ERROR
-                _movies.value = listOf()
-            }
+            _movies.value = repository.getMovies()
+
+            _status.value = ApiStatus.DONE
         }
     }
 
