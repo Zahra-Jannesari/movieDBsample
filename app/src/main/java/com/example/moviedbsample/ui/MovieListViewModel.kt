@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.moviedbsample.domain.Container
 import com.example.moviedbsample.model.Movie
 import com.example.moviedbsample.network.MoviesApi
 import kotlinx.coroutines.launch
@@ -11,6 +12,7 @@ import kotlinx.coroutines.launch
 enum class ApiStatus { LOADING, ERROR, DONE }
 class MovieListViewModel : ViewModel() {
 
+    val repository = Container.repository
     private val _status = MutableLiveData<ApiStatus>()
     val status: LiveData<ApiStatus> = _status
 
@@ -25,7 +27,7 @@ class MovieListViewModel : ViewModel() {
         viewModelScope.launch {
             _status.value = ApiStatus.LOADING
             try {
-                _movies.value = MoviesApi.retrofitService.getPopularMovies(1).movieList
+                _movies.value = repository.getMovies()
                 _status.value = ApiStatus.DONE
             } catch (e: Exception) {
                 _status.value = ApiStatus.ERROR

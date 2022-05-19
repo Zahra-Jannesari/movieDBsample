@@ -30,14 +30,14 @@ interface MoviesApiService {
 
     @GET("search/movie")
     suspend fun getSearchedMovie(
-        @Query("api_key") apiKey: String = API_KEY,
-        @Query("query") searched: String
+        @Query("query") searchString: String,
+        @Query("api_key") apiKey: String = API_KEY
     ): Movies
 
     @GET("discover/movie")
     suspend fun discoverMovie(
-        @Query("api_key") apiKey: String = API_KEY,
-        @Query("with_genres") genres: String
+        @Query("with_genres") genres: String,
+        @Query("api_key") apiKey: String = API_KEY
     ): Movies
 }
 
