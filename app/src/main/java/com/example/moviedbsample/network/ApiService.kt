@@ -8,6 +8,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -39,6 +40,20 @@ interface ApiService {
         @Query("page")page : Int = 1
     ): MovieListApiResult
 
+    @GET("movie/{id}")
+    suspend fun getMovie(
+        @Path("id") id : Int
+    )
+
+
+    suspend fun getVideo()
+
+    //https://api.themoviedb.org/3/search/movie?api_key=b8fb74a7f7ebe3f2402f6de80059d5a5&query=sun
+    @GET(" search/movie ")
+    suspend fun searchMovie(
+        @Query("query") searchKey : String,
+        @Query("api_key") key : String = API_KEY,
+    ): MovieListApiResult
 
 }
 

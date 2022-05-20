@@ -18,4 +18,14 @@ class MovieRemoteDataSource {
             Movie(listOf(), 111,"" , "","supranos" , false),
         )
     }
+
+    suspend fun getVideoKey() : String
+    {
+        //TODO : return video key
+        return ""
+    }
+
+     suspend fun searchMovie(searchKey:String) : List<Movie>{
+         return MoviesApi.retrofitService.searchMovie(searchKey,).movieList
+     }
 }

@@ -2,11 +2,15 @@ package com.example.moviedbsample.data
 
 import com.example.moviedbsample.model.Movie
 
-class MovieRepository(val movieRemoteDataSource : MovieRemoteDataSource) {
+class MovieRepository(val movieRemoteDataSource : MovieRemoteDataSource ,) {
 
     suspend fun getMovies() : List<Movie>{
         return movieRemoteDataSource.getMovies()
 
+    }
+
+    suspend fun getYoutubeLink(id) : String {
+        return "youtube /watch v = "+ movieRemoteDataSource.getVideoKey()
     }
 
 }
