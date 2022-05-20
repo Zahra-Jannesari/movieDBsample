@@ -9,7 +9,7 @@ class MovieRepository(val movieRemoteDataSource : MovieRemoteDataSource ,) {
 
     }
 
-    suspend fun getYoutubeLink(id) : String {
+    suspend fun getYoutubeLink(id : Int) : String {
         return "youtube /watch v = "+ movieRemoteDataSource.getVideoKey()
     }
 

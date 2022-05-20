@@ -12,7 +12,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 
-private const val BASE_URL = "https://api.themoviedb.org/3"
+private const val BASE_URL = "https://api.themoviedb.org/3/"
 private const val API_KEY = "b8fb74a7f7ebe3f2402f6de80059d5a5"
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -34,7 +34,7 @@ private val retrofit = Retrofit.Builder()
 
 interface ApiService {
 
-    @GET("/movie/popular")
+    @GET("movie/popular")
     suspend fun getMovies(
         @Query("api_key") key : String = API_KEY,
         @Query("page")page : Int = 1
