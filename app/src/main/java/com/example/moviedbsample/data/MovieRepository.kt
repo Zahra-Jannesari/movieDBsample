@@ -2,18 +2,10 @@ package com.example.moviedbsample.data
 
 import com.example.moviedbsample.model.Movie
 
-class MovieRepository {
+class MovieRepository(val movieRemoteDataSource : MovieRemoteDataSource) {
 
     suspend fun getMovies() : List<Movie>{
-
-        //TODO : fetch list of movies
-
-        return  getSampleMovies()
+        return movieRemoteDataSource.getMovies()
     }
-    fun getSampleMovies() : List<Movie>{
-        return listOf(
-            Movie("جوکر"),
-            Movie("firelight")
-        )
-    }
+
 }
