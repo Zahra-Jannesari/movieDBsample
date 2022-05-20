@@ -16,7 +16,8 @@
         android:id="@+id/tvMovieNames"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="----" />
+        android:textSize="40sp"
+        android:text="@{vmodel.movieList[0].title + ` ` + vmodel.movieList[1].title}" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
