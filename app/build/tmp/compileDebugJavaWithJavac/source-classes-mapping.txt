@@ -1,0 +1,24 @@
+com/example/moviedbsample/DataBindingTriggerClass.java
+ com.example.moviedbsample.DataBindingTriggerClass
+com/example/moviedbsample/databinding/MovieItemBinding.java
+ com.example.moviedbsample.databinding.MovieItemBinding
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/example/moviedbsample/BuildConfig.java
+ com.example.moviedbsample.BuildConfig
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/example/moviedbsample/databinding/ActivityMainBinding.java
+ com.example.moviedbsample.databinding.ActivityMainBinding
+com/example/moviedbsample/DataBinderMapperImpl.java
+ com.example.moviedbsample.DataBinderMapperImpl
+ com.example.moviedbsample.DataBinderMapperImpl$InnerBrLookup
+ com.example.moviedbsample.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/moviedbsample/BR.java
+ com.example.moviedbsample.BR
+com/example/moviedbsample/databinding/FragmentMovieListBinding.java
+ com.example.moviedbsample.databinding.FragmentMovieListBinding
+com/example/moviedbsample/databinding/FragmentMovieListBindingImpl.java
+ com.example.moviedbsample.databinding.FragmentMovieListBindingImpl

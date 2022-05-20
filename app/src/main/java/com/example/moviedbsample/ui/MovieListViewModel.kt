@@ -1,5 +1,6 @@
 package com.example.moviedbsample.ui
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,8 +20,14 @@ class MovieListViewModel : ViewModel() {
     private val _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> = _movies
 
+    private val _upcomingMovies = MutableLiveData<List<Movie>>()
+    val upcomingMovies: LiveData<List<Movie>> = _upcomingMovies
+
+    private val _detailMovie = MutableLiveData<Movie>()
+    val detailMovie: LiveData<Movie> = _detailMovie
     init {
         getMovies()
+        getUpcomingMovies()
     }
 
     private fun getMovies() {
@@ -32,4 +39,19 @@ class MovieListViewModel : ViewModel() {
         }
     }
 
+    fun getUpcomingMovies() {
+        viewModelScope.launch {
+            _status.value = ApiStatus.LOADING
+            _upcomingMovies.value = repository.getUpcomingMovies()
+
+            _status.value = ApiStatus.DONE
+        }
+    }
+    fun getMovieDetails(id:Int){
+        viewModelScope.launch {
+            _status.value = ApiStatus.LOADING
+            _detailMovie.value = repository.getMovieDetails(id)
+            _status.value = ApiStatus.DONE
+        }
+    }
 }

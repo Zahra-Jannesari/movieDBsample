@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\FIX4U.IR\\MovieDBSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\FIX4U.IR\\MovieDBSample\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\FIX4U.IR\\MovieDBSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_movie_list.xml",
+        "source": "C:\\Users\\FIX4U.IR\\MovieDBSample\\app\\src\\main\\res\\layout\\fragment_movie_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\FIX4U.IR\\MovieDBSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\movie_item.xml",
+        "source": "C:\\Users\\FIX4U.IR\\MovieDBSample\\app\\src\\main\\res\\layout\\movie_item.xml"
+    }
+]

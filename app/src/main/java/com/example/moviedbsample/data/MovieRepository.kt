@@ -1,5 +1,6 @@
 package com.example.moviedbsample.data
 
+import android.util.Log
 import com.example.moviedbsample.model.Movie
 import com.example.moviedbsample.network.MoviesApi
 import java.lang.Exception
@@ -19,6 +20,27 @@ class MovieRepository(
         }
         return  movies
     }
+    suspend fun getUpcomingMovies():List<Movie>{
+        var movies = listOf<Movie>()
+        try {
+            movies=MoviesApi.retrofitService.upcoming().movieList
+            Log.d("TAG", "$movies ")
+        }catch (e:Exception){
+
+        }
+        return  movies
+    }
+    suspend fun getMovieDetails(Id:Int):Movie{
+        var movie=Movie()
+        try {
+            Log.d("TAG", "1")
+            movie=MoviesApi.retrofitService.getMovieDetails(movieId = Id)
+            Log.d("TAG", "${movie.title}")
+        }catch (e:Exception){
+
+        }
+        return movie
+    }
 }
 
 class MoviesRemoteDataSource {
@@ -31,8 +53,8 @@ class MoviesRemoteDataSource {
 class MovieLocalDataSource {
     val movieList = arrayListOf(
         Movie(
-            false, listOf(), 111, "ovv",
-            "", "fake movie", false
+//            false, listOf(), 111, "ovv",
+//            "", "fake movie", false
         )
     )
     suspend fun getMovies(): List<Movie> {

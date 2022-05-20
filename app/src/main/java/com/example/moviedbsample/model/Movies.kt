@@ -17,20 +17,19 @@ data class Movies (
 )
 
 data class Movie(
-        val adult: Boolean,
+        val adult: Boolean=true,
 
-        @Json(name = "genre_ids")
-        val genreIDS: List<Int>,
+
 
         @Json(name = "id")
-        val id: Long,
+        val id: Int=0,
 
-        val overview: String,
+        val overview: String="",
 
         @Json(name = "poster_path")
-        val posterPath: String,
+        val posterPath: String="",
 
-        val title: String,
+        val title: String="",
 
-        val video: Boolean
+        val video: Boolean=false
     )
