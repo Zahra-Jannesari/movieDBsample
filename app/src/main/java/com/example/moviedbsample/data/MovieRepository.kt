@@ -6,6 +6,7 @@ class MovieRepository(val movieRemoteDataSource : MovieRemoteDataSource) {
 
     suspend fun getMovies() : List<Movie>{
         return movieRemoteDataSource.getMovies()
+
     }
 
 }
